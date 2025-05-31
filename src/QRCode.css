@@ -1,4 +1,4 @@
-*{
+/* *{
     box-sizing: border-box;
     font-family: "Inter",sans-serif;
 }
@@ -71,5 +71,127 @@ button{
 .footer{
     text-decoration: none;
     color: #3498db;
-    margin-top: 10px;
+    margin-top: 30px;
+} */
+
+
+
+/* Base styles (your existing CSS) */
+*{
+    box-sizing: border-box;
+    font-family: "Inter",sans-serif;
+}
+
+.app-container{
+    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* added some padding for small screens */
+}
+
+.app-container h1{
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding:10px 0px;
+    text-align: center; /* center text on smaller screens */
+}
+
+.qr-code-image{
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    max-width: 100%;  /* make sure images don't overflow */
+    height: auto;
+}
+
+.input-label{
+    display: block;
+    margin-bottom: 8px;
+    color: #3498db;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+input[type="text"]{
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    border:2px solid  #3498db;
+    border-radius: 5px;
+    font-size: 16px; /* slightly bigger on mobile */
+}
+
+button{
+    padding: 15px 20px;
+    font-size: 18px;
+    color:#fff;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 120px; /* prevent too small buttons */
+}
+
+/* Your button classes */
+.generate-button{
+    background-color: #3498db;
+}
+
+.generate-button:disabled{
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.download-button{
+    background-color: #27ae60;
+    margin-left: 10px;
+}
+
+.download-button:hover{
+    background-color: #219a52;
+}
+
+.footer{
+    text-decoration: none;
+    color: #3498db;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .app-container {
+        height: auto; /* Let it grow based on content */
+        padding: 15px;
+    }
+
+    .app-container h1 {
+        font-size: 16px;
+        padding: 8px 0;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 15px;
+        min-width: 100px;
+    }
+
+    /* Stack buttons vertically with spacing on small screens */
+    .generate-button, .download-button {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 12px;
+    }
+
+    .download-button {
+        margin-bottom: 0;
+    }
 }
